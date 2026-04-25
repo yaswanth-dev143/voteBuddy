@@ -1,4 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { describe, test, expect } from "@jest/globals";
 import { CrisisAssistant } from "@/components/features/CrisisAssistant";
 
 describe("CrisisAssistant Component", () => {

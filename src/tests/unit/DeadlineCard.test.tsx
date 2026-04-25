@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { describe, test, expect } from "@jest/globals";
 import { DeadlineCard } from "@/components/features/DeadlineCard";
 
 describe("DeadlineCard Component", () => {
