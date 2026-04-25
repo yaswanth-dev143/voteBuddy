@@ -2,7 +2,7 @@
  * @fileoverview Google Calendar Integration Utilities
  */
 
-import { ElectionDeadline } from '@/types/election';
+import { Deadline as ElectionDeadline } from '@/types/election';
 
 /**
  * Generates a URL for adding an event to Google Calendar via the web interface.
@@ -11,8 +11,8 @@ export function generateGoogleCalendarUrl(deadline: ElectionDeadline, location: 
   const baseUrl = 'https://calendar.google.com/calendar/render';
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: `${deadline.type} Deadline - Election`,
-    details: deadline.description || `Don't forget the ${deadline.type} deadline for the upcoming election.`,
+    text: `${deadline.name || deadline.type} Deadline - Election`,
+    details: `Don't forget the ${deadline.name || deadline.type} deadline for the upcoming election.`,
     location: location,
   });
 
@@ -58,7 +58,7 @@ SUMMARY:${deadline.type} Deadline
 DTSTART:${formatIcsDate(startDate)}
 DTEND:${formatIcsDate(endDate)}
 LOCATION:${location}
-DESCRIPTION:${deadline.description || `Voting deadline reminder.`}
+DESCRIPTION:Voting deadline reminder.
 STATUS:CONFIRMED
 SEQUENCE:0
 BEGIN:VALARM

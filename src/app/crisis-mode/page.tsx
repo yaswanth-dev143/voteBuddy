@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CrisisAssistant } from '@/components/features/CrisisAssistant';
 
 export const metadata: Metadata = {
   title: '🚨 Election Crisis Mode',
@@ -13,12 +14,11 @@ export default function CrisisModePage() {
         Always contact your local election authority for official assistance.
       </div>
       <h1>🚨 Election Crisis Mode</h1>
-      <p style={{ color: 'var(--color-text-muted)', marginTop: 'var(--space-4)' }}>
+      <p style={{ color: 'var(--color-text-muted)', marginTop: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
         Having a problem at the polls? Select your issue below for step-by-step guidance.
       </p>
-      <div style={{ padding: 'var(--space-16)', textAlign: 'center', background: 'var(--color-bg-subtle)', border: '2px dashed var(--color-border)', borderRadius: 'var(--radius-xl)', marginTop: 'var(--space-8)', color: 'var(--color-text-muted)', fontSize: 'var(--font-size-lg)' }}>
-        🚧 Crisis Navigator UI loading…
-      </div>
+      
+      <CrisisAssistant />
     </div>
   );
 }
