@@ -12,7 +12,7 @@ import {
   arrayRemove,
 } from 'firebase/firestore';
 import { db } from './config';
-import { UserPreferences, SavedDeadline } from '@/types/index';
+import { UserPreferences, SavedDeadline } from '@/types/user';
 
 // Initialize a user profile document
 export async function initializeUserProfile(userId: string, email: string) {

@@ -5,9 +5,18 @@ export interface UserLocation {
 }
 
 export interface UserPreferences {
-  notificationsEnabled: boolean;
-  language: string;
+  emailAlerts: boolean;
+  smsAlerts: boolean;
+  theme: string;
+  language?: string;
   defaultState?: string;
+}
+
+export interface SavedDeadline {
+  id: string;
+  name: string;
+  date: string;
+  type: string;
 }
 
 export interface UserProfile {
