@@ -10,6 +10,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SkipNav } from '@/components/ui/SkipNav';
 import { NavBar } from '@/components/ui/NavBar';
@@ -106,6 +108,9 @@ export default function RootLayout({
             }
           `}
         </Script>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
