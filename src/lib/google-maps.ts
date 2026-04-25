@@ -18,7 +18,7 @@ export async function initializeMap(container: HTMLElement, options?: google.map
     libraries: ['places', 'geometry'],
   });
 
-  await loader.importLibrary('maps');
+  await (loader as any).importLibrary('maps');
   googleMapsLib = window.google.maps;
 
   if (!googleMapsLib) {
