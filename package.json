@@ -15,10 +15,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.91.1",
     "@googlemaps/js-api-loader": "^2.0.2",
     "dompurify": "^3.2.6",
-    "firebase": "^12.12.1",
     "isomorphic-dompurify": "^2.26.0",
     "next": "16.2.4",
     "react": "19.2.4",
