@@ -1,0 +1,5 @@
+.header { text-align: center; margin-bottom: var(--space-12); display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+.icon { font-size: 3.5rem; line-height: 1; }
+.title { font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl)); font-weight: var(--font-weight-extrabold); }
+.subtitle { font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 52ch; text-align: center; line-height: var(--line-height-relaxed); }
+.placeholder { padding: var(--space-16); text-align: center; background: var(--color-bg-subtle); border: 2px dashed var(--color-border); border-radius: var(--radius-xl); font-size: var(--font-size-lg); color: var(--color-text-muted); }

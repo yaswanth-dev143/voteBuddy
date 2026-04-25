@@ -1,0 +1,4 @@
+/* SkipNav styles — works with global .skip-nav class */
+.skipNav {
+  /* Additional specificity if needed — global class handles the core */
+}
