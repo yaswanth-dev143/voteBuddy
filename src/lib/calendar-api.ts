@@ -54,7 +54,7 @@ VERSION:2.0
 PRODID:-//VoterJourney//Election Reminders//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-SUMMARY:${deadline.type} Deadline
+SUMMARY:${deadline.name || deadline.type} Deadline
 DTSTART:${formatIcsDate(startDate)}
 DTEND:${formatIcsDate(endDate)}
 LOCATION:${location}
