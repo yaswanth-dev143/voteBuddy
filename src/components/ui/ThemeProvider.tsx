@@ -59,7 +59,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSystemDark(mq.matches);
     if (stored && ['light', 'dark', 'system'].includes(stored)) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+       
       setThemeState(stored);
     }
 

@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { VoterInfo } from '@/types/election';
 
 const fetcher = (url: string) => fetch(url).then((res) => {
-  if (!res.ok) throw new Error('Failed to fetch data');
+  if (!res.ok) {throw new Error('Failed to fetch data');}
   return res.json();
 });
 

@@ -7,12 +7,12 @@ export function useDeadlines(state: string) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    if (!state) return;
+    if (!state) {return;}
 
     setIsLoading(true);
     fetch(`/api/deadlines?state=${state}`)
       .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch deadlines');
+        if (!res.ok) {throw new Error('Failed to fetch deadlines');}
         return res.json();
       })
       .then((data) => {
@@ -34,8 +34,8 @@ export function useDeadlines(state: string) {
 
         // Sort by urgency (soonest first, then past deadlines at the bottom)
         calculated.sort((a: Deadline, b: Deadline) => {
-          if (a.daysRemaining < 0 && b.daysRemaining >= 0) return 1;
-          if (b.daysRemaining < 0 && a.daysRemaining >= 0) return -1;
+          if (a.daysRemaining < 0 && b.daysRemaining >= 0) {return 1;}
+          if (b.daysRemaining < 0 && a.daysRemaining >= 0) {return -1;}
           return a.daysRemaining - b.daysRemaining;
         });
 

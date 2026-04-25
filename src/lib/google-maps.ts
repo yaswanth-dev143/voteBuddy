@@ -37,7 +37,7 @@ export async function initializeMap(container: HTMLElement, options?: google.map
 }
 
 export async function geocodeAddress(address: string): Promise<google.maps.LatLngLiteral | null> {
-  if (!googleMapsLib) throw new Error('Maps library not loaded');
+  if (!googleMapsLib) {throw new Error('Maps library not loaded');}
 
   const geocoder = new googleMapsLib.Geocoder();
   
@@ -58,7 +58,7 @@ export async function calculateDistance(
   origin: google.maps.LatLngLiteral | string,
   destination: google.maps.LatLngLiteral | string
 ) {
-  if (!googleMapsLib) throw new Error('Maps library not loaded');
+  if (!googleMapsLib) {throw new Error('Maps library not loaded');}
 
   const service = new googleMapsLib.DistanceMatrixService();
   
@@ -83,7 +83,7 @@ export async function calculateDistance(
 }
 
 export async function findNearbyPollingPlaces(location: google.maps.LatLngLiteral) {
-  if (!googleMapsLib || !mapInstance) throw new Error('Maps library not loaded');
+  if (!googleMapsLib || !mapInstance) {throw new Error('Maps library not loaded');}
 
   const service = new googleMapsLib.places.PlacesService(mapInstance);
   
@@ -109,7 +109,7 @@ export function addPollingPlaceMarkers(
   map: google.maps.Map,
   locations: Array<{ lat: number; lng: number; title: string }>
 ) {
-  if (!googleMapsLib) return;
+  if (!googleMapsLib) {return;}
 
   return locations.map((loc) => {
     return new googleMapsLib!.Marker({

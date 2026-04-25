@@ -51,7 +51,7 @@ export function validateBallotCompletion(
 export function getCureInstructions(stateCode: string, errorType?: string): string {
   const requirements = getBallotRequirements(stateCode);
   
-  if (!requirements) return 'Contact your local election office immediately.';
+  if (!requirements) {return 'Contact your local election office immediately.';}
   
   const baseCure = requirements.cure_process !== 'None' 
     ? requirements.cure_process 

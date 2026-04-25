@@ -27,7 +27,7 @@ export function trackFeatureUsage(featureName: string, additionalParams?: Record
  * Track specific button clicks or interactions
  */
 export function trackInteraction(elementName: string, action: string = 'click') {
-    if (!process.env.NEXT_PUBLIC_GA_ID) return;
+    if (!process.env.NEXT_PUBLIC_GA_ID) {return;}
     
     sendGAEvent('event', 'user_interaction', {
         element: elementName,

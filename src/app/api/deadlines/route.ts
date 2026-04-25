@@ -27,8 +27,8 @@ export async function GET(request: NextRequest) {
 
   // Convert relative string like "15_days_before" to actual Dates
   const calculateDate = (relativeString: string | null) => {
-    if (!relativeString) return null;
-    if (relativeString === 'election_day') return ELECTION_DATE.toISOString();
+    if (!relativeString) {return null;}
+    if (relativeString === 'election_day') {return ELECTION_DATE.toISOString();}
     
     const match = relativeString.match(/(\d+)_days_before/);
     if (match) {

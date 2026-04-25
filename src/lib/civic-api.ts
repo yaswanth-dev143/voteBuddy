@@ -51,14 +51,14 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
       state: data.state || [],
     };
   } catch (error) {
-    if (error instanceof APIError) throw error;
+    if (error instanceof APIError) {throw error;}
     throw new APIError('Failed to fetch voter information', 500, 'CIVIC_API_ERROR');
   }
 }
 
 export async function getElectionData(electionId: string) {
   const apiKey = process.env.GOOGLE_CIVIC_API_KEY;
-  if (!apiKey) throw new APIError('API key missing', 500, 'CONFIG_ERROR');
+  if (!apiKey) {throw new APIError('API key missing', 500, 'CONFIG_ERROR');}
 
   const url = new URL(`${CIVIC_API_BASE}/elections`);
   url.searchParams.append('key', apiKey);
@@ -78,7 +78,7 @@ export async function getElectionData(electionId: string) {
 
 export async function getRepresentatives(address: string) {
   const apiKey = process.env.GOOGLE_CIVIC_API_KEY;
-  if (!apiKey) throw new APIError('API key missing', 500, 'CONFIG_ERROR');
+  if (!apiKey) {throw new APIError('API key missing', 500, 'CONFIG_ERROR');}
 
   const url = new URL(`${CIVIC_API_BASE}/representatives`);
   url.searchParams.append('key', apiKey);

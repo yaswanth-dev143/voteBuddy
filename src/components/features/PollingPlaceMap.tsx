@@ -61,7 +61,7 @@ export function PollingPlaceMap({
   }, [mapRef, map, userLocation]);
 
   useEffect(() => {
-    if (!map || !window.google) return;
+    if (!map || !window.google) {return;}
 
     // Clear existing markers logic would go here if managing dynamic markers
 
