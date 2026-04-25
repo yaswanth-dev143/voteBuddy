@@ -3,13 +3,11 @@
  */
 
 import {
-  collection,
   doc,
   setDoc,
   getDoc,
   updateDoc,
   arrayUnion,
-  arrayRemove,
 } from 'firebase/firestore';
 import { db } from './config';
 import { UserPreferences, SavedDeadline } from '@/types/user';

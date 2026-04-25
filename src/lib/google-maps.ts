@@ -87,7 +87,7 @@ export async function findNearbyPollingPlaces(location: google.maps.LatLngLitera
 
   const service = new googleMapsLib.places.PlacesService(mapInstance);
   
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     service.nearbySearch(
       {
         location,

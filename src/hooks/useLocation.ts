@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { UserLocation } from "@/types/user";
 
 interface UseLocationReturn {
@@ -13,7 +13,7 @@ interface UseLocationReturn {
 export function useLocation(): UseLocationReturn {
   const [location, setLocation] = useState<UserLocation | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const requestLocation = () => {
     if (!navigator.geolocation) {
@@ -39,10 +39,7 @@ export function useLocation(): UseLocationReturn {
     );
   };
 
-  useEffect(() => {
-    // Attempt to get location on mount if permitted, or just finish loading
-    setIsLoading(false);
-  }, []);
+
 
   return { location, error, isLoading, requestLocation };
 }

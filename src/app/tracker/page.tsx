@@ -28,6 +28,13 @@ const JOURNEY_STEPS = [
     action: { label: "Decode your ballot", href: "/translator" },
   },
   {
+    id: "validated",
+    title: "Ballot Validated",
+    description: "Avoid common mistakes and ensure your vote counts.",
+    icon: <ClipboardList className="h-6 w-6" />,
+    action: { label: "Check my ballot", href: "/ballot-validator" },
+  },
+  {
     id: "voted",
     title: "Voted!",
     description: "Cast your ballot and make your voice heard.",

@@ -3,8 +3,7 @@
  */
 
 import { APIError } from './error-handler';
-import { VoterInfo, DecodedBallotMeasure } from '@/types/election';
-import { PollingLocation, BallotContest } from '@/types/index';
+import { VoterInfo } from '@/types/election';
 
 const CIVIC_API_BASE = 'https://www.googleapis.com/civicinfo/v2';
 const CACHE_TTL = 300; // 5 minutes
