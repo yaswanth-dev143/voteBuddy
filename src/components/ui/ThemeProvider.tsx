@@ -56,9 +56,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
-
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSystemDark(mq.matches);
     if (stored && ['light', 'dark', 'system'].includes(stored)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setThemeState(stored);
     }
 
